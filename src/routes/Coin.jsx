@@ -40,7 +40,7 @@ const Coin = () => {
               {coin.symbol ? <p>{coin.symbol.toUpperCase()}/USD</p> : null}
             </div>
             <div className="coin-price">
-              {coin.market_data?.current_price ? (
+              {coin.market_data?.current_price?.usd ? (
                 <h1>${coin.market_data.current_price.usd.toLocaleString()}</h1>
               ) : null}
             </div>
@@ -62,7 +62,8 @@ const Coin = () => {
             <tbody>
               <tr>
                 <td>
-                  {coin.market_data?.price_change_percentage_1h_in_currency ? (
+                  {coin.market_data?.price_change_percentage_1h_in_currency
+                    ?.usd ? (
                     <p>
                       {coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
                         2
@@ -72,7 +73,8 @@ const Coin = () => {
                   ) : null}
                 </td>
                 <td>
-                  {coin.market_data?.price_change_percentage_24h_in_currency ? (
+                  {coin.market_data?.price_change_percentage_24h_in_currency
+                    ?.usd ? (
                     <p>
                       {coin.market_data.price_change_percentage_24h_in_currency.usd.toFixed(
                         2
@@ -82,7 +84,8 @@ const Coin = () => {
                   ) : null}
                 </td>
                 <td>
-                  {coin.market_data?.price_change_percentage_7d_in_currency ? (
+                  {coin.market_data?.price_change_percentage_7d_in_currency
+                    ?.usd ? (
                     <p>
                       {coin.market_data.price_change_percentage_7d_in_currency.usd.toFixed(
                         2
@@ -92,7 +95,8 @@ const Coin = () => {
                   ) : null}
                 </td>
                 <td>
-                  {coin.market_data?.price_change_percentage_14d_in_currency ? (
+                  {coin.market_data?.price_change_percentage_14d_in_currency
+                    ?.usd ? (
                     <p>
                       {coin.market_data.price_change_percentage_14d_in_currency.usd.toFixed(
                         2
@@ -102,7 +106,8 @@ const Coin = () => {
                   ) : null}
                 </td>
                 <td>
-                  {coin.market_data?.price_change_percentage_30d_in_currency ? (
+                  {coin.market_data?.price_change_percentage_30d_in_currency
+                    ?.usd ? (
                     <p>
                       {coin.market_data.price_change_percentage_30d_in_currency.usd.toFixed(
                         2
@@ -112,7 +117,8 @@ const Coin = () => {
                   ) : null}
                 </td>
                 <td>
-                  {coin.market_data?.price_change_percentage_1y_in_currency ? (
+                  {coin.market_data?.price_change_percentage_1y_in_currency
+                    ?.usd ? (
                     <p>
                       {coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
                         2
@@ -130,13 +136,13 @@ const Coin = () => {
             <div className="left">
               <div className="row">
                 <h4>24 Hour Low</h4>
-                {coin.market_data?.low_24h ? (
+                {coin.market_data?.low_24h?.usd ? (
                   <p>${coin.market_data.low_24h.usd.toLocaleString()}</p>
                 ) : null}
               </div>
               <div className="row">
                 <h4>24 Hour High</h4>
-                {coin.market_data?.high_24h ? (
+                {coin.market_data?.high_24h?.usd ? (
                   <p>${coin.market_data.high_24h.usd.toLocaleString()}</p>
                 ) : null}
               </div>
@@ -144,7 +150,7 @@ const Coin = () => {
             <div className="right">
               <div className="row">
                 <h4>Market Cap</h4>
-                {coin.market_data?.market_cap ? (
+                {coin.market_data?.market_cap?.usd ? (
                   <p>${coin.market_data.market_cap.usd.toLocaleString()}</p>
                 ) : null}
               </div>
